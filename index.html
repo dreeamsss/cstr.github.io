@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Article Constructor</title>
+</head>
+<body>
+    
+    <main class="main">
+        <div class="container main__container">
+            <div class="main__container-inner">
+                <div class="editor">
+                    <form class="editor__form">
+                        <div class="editor__title">
+                            <input class="" type="text" name="title" placeholder="Введите заголовок" value="">
+                        </div>
+                        <div class="editor__paragraph">
+                            <input class="" type="text" name="paragraph" placeholder="Введите параграф" value="">
+                        </div>
+                        <div class="editor__actions">
+                            <button type="button" class="editor__btn" data-type="add">Добавить в статью</button>
+                            <button type="button" class="editor__btn" data-type="save" disabled>Сохранить статью</button>
+                        </div>
+                    </form>
+                </div>
+        
+                <div class="articles">
+                    <div class="articles__absence">
+                        Тут пусто :(
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="final-articles">
+                
+            </div>
+        </div>
+
+
+        <div class="modal">
+            <div class="modal__container" data-target="articles-item">
+                <div class="modal__content">
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./js/CreatingArticles.js"></script>
+    <script src="./js/Modal.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

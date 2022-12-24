@@ -1,0 +1,244 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    background-color: #141414;
+    color: #fff;
+}
+
+.container {
+    max-width: 1400px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.main__container {
+    padding-top: 50px;
+}
+
+.main__container-inner {
+    display: flex;
+    justify-content: space-between;
+    height: 900px;
+    border: 1px solid gray;
+    border-radius: 10px;
+
+    position: relative;
+}
+
+
+.articles {
+    width: 60%;
+    overflow-y: auto;
+}
+
+.editor {
+    width: 40%;
+    border-right: 1px solid gray;
+}
+
+.editor, 
+.articles {
+    padding: 0 20px;
+    padding-top: 100px;
+}
+
+.editor__title input,
+.editor__paragraph input {
+    background-color: transparent;
+    border: 1px solid #898989;
+    padding: 15px 25px;
+    border-radius: 10px;
+    width: 100%;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.editor__title .input-error,
+.editor__paragraph .input-error{
+    border: 1px solid #DB3138;
+}
+
+.editor__actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editor__btn {
+    background-color: #DB3138;
+    padding: 15px 25px;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background 0.2s ease-in-out;
+
+}
+
+.editor__btn[disabled] {
+    background-color: #831f22;
+    cursor: auto;
+}
+
+.editor__btn:hover {
+    background-color: #831f22;
+    transition: background 0.2s ease-in-out;
+}
+
+.articles__title,
+.articles__paragraph {
+    margin: 0 0 10px;
+}
+
+.articles__title {
+    font-size: 26px;
+}
+
+.articles__paragraph {
+    font-size: 16px;
+}
+
+.articles__part {
+    margin-bottom: 40px;
+}
+
+.articles__absence {
+    font-size: 30px;
+    text-align: center;
+    color: #d7d7d7;
+}
+
+.articles__item {
+    overflow-wrap: break-word;
+}
+
+
+.final-articles {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    padding: 50px 0;
+}
+
+.final-articles .articles__item {
+    grid-column: 4 span;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    overflow-wrap: break-word;
+}
+
+.final-articles .articles__part {
+    margin-bottom: 0;
+}
+
+.final-articles .articles__title {
+    text-overflow: ellipsis; 
+    overflow: hidden; 
+    width: 100%; 
+    white-space: nowrap; 
+    margin-bottom: 25px;
+}
+
+.final-articles .articles__paragraph {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.final-articles .articles__item:hover {
+    background-color: rgb(49, 49, 49);
+}
+
+/* 820 */
+
+
+
+.modal {
+	--transition-time: 0.3s;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	background-color: rgba(0,0,0, 0.9);
+	cursor: pointer;
+	overflow-y: auto;
+	overflow-x: hidden;
+	text-align: center;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity var(--transition-time), visibility var(--transition-time);
+}
+
+.modal::before {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+}
+
+.modal__container {
+	position: relative;
+	width: 1000px;
+	margin: 50px auto;
+	display: none;
+	vertical-align: middle;
+	background-color: #141414;
+	border-radius: 20px;
+	cursor: default;
+	text-align: left;
+}
+
+@media (max-width: 1024px) {
+	.modal__container {
+		width: 90%;
+	}
+}
+
+.modal.is-open {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity var(--transition-time), visibility var(--transition-time);
+}
+
+.modal__container.modal-open {
+	display: inline-block;
+}
+
+.fade {
+	opacity: 0;
+	transition: opacity var(--transition-time);
+}
+
+.fade.animate-open {
+	opacity: 1;
+	transition: opacity var(--transition-time);
+}
+
+
+.modal__content {
+    padding: 40px 40px 0;
+}
+
+.disable-scroll {
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
