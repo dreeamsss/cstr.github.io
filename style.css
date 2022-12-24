@@ -53,7 +53,7 @@ body {
 .editor__paragraph input {
     background-color: transparent;
     border: 1px solid #898989;
-    padding: 15px 25px;
+    padding: 25px;
     border-radius: 10px;
     width: 100%;
     color: white;
